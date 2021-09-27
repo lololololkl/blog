@@ -28,7 +28,24 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">友链</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">江夏de博客</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/06/06/spring/2%20spring%20bean%E5%AE%9A%E4%B9%89/">Spring Bean 定义</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-06-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-30</span></span></div></header><div class="post-body"><div class="post-excerpt"><h3 id="spring-定义"   >
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">友链</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">江夏de博客</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/06/07/spring/4%20spring%20bean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Spring Bean 生命周期</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-06-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Spring-容器中-Bean-的生命周期流程"   >
+          <a href="#Spring-容器中-Bean-的生命周期流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#Spring-容器中-Bean-的生命周期流程" class="headerlink" title="Spring 容器中 Bean 的生命周期流程"></a>Spring 容器中 Bean 的生命周期流程</h3>
+      <img src='http://c.biancheng.net/uploads/allimg/210701/10551T325-0.png'>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/06/07/spring/3%20spring%20bean%E4%BD%9C%E7%94%A8%E5%9F%9F/">Spring Bean 作用域</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-06-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-30</span></span></div></header><div class="post-body"><div class="post-excerpt"><h3 id="作用域的种类"   >
+          <a href="#作用域的种类" class="heading-link"><i class="fas fa-link"></i></a><a href="#作用域的种类" class="headerlink" title="作用域的种类"></a>作用域的种类</h3>
+      <pre><code>Spring 容器在初始化一个 Bean 实例时，同时会指定该实例的作用域。Spring 5 支持以下 6 种作用域。
+</code></pre>
+<ul>
+<li><p>1）singleton</p>
+<p>  默认值，单例模式，表示在 Spring 容器中只有一个 Bean 实例，Bean 以单例的方式存在。</p>
+</li>
+<li><p>2）prototype</p>
+<p>  原型模式，表示每次通过 Spring 容器获取 Bean 时，容器都会创建一个 Bean 实例。</p>
+</li>
+<li><p>3）request</p>
+</li>
+</ul></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/06/07/spring/3%20spring%20bean%E4%BD%9C%E7%94%A8%E5%9F%9F/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/06/06/spring/2%20spring%20bean%E5%AE%9A%E4%B9%89/">Spring Bean 定义</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-06-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-30</span></span></div></header><div class="post-body"><div class="post-excerpt"><h3 id="spring-定义"   >
           <a href="#spring-定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#spring-定义" class="headerlink" title="spring 定义"></a>spring 定义</h3>
       <pre><code>通常情况下，Spring 的配置文件使用 XML 格式。
 Spring 配置文件支持两种格式，即 XML 文件格式和 Properties 文件格式。
@@ -47,296 +64,7 @@ XML 配置文件是树形结构，相对于 Properties 文件来说更加灵活�
 <li><p>面向切面编程 AOP</p>
 <p>  AOP 模块：提供了面向切面编程实现，提供比如日志记录、权限控制、性能统计等通用功能和业务逻辑分离的技术，并且能动态的把这些功能添加到需要的代码中，这样各司其职，降低业务逻辑和通用功能的耦合。</p>
 </li>
-</ul></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/06/05/spring/1%20%E6%A6%82%E8%BF%B0/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/12/Web/c1_certify/">CSS基础知识</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-12</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-09-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><ul>
-<li><p>html: 文档元数据、内容区域标签、文本内容标签、内联文本语义标签、图片与多媒体标签、表格内容标签、表单标签</p>
-</li>
-<li><p>css: 基本语法、块级/内联元素、图片样式、背景图样式、盒子模型、边框与背景、字体样式、CSS嵌入方式、CSS优先级、定位、浮动、基础选择器、分组选择器、组合选择器、伪类选择器、溢出属性、颜色值标注、em/rem/px单位</p>
-</li>
-</ul>
-
-        <h2 id="CSS"   >
-          <a href="#CSS" class="heading-link"><i class="fas fa-link"></i></a><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2>
-      
-        <h3 id="块级-内联元素"   >
-          <a href="#块级-内联元素" class="heading-link"><i class="fas fa-link"></i></a><a href="#块级-内联元素" class="headerlink" title="块级/内联元素"></a>块级/内联元素</h3>
-      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/xuanfuhuo4769/article/details/81326457" >https://blog.csdn.net/xuanfuhuo4769/article/details/81326457</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>块级元素|内联元素<br>—-|—-<br>独占一行,默认情况下，其宽度自动填满其父元素宽度|相邻的行内元素会排列在同一行里，直到一行排不下，才会换行，其宽度随元素的内容而变化<br>可以设置width，height属性|行内元素设置width，height属性无效<br>可以设置margin和padding属性|行内元素起边距作用的只有margin-left、margin-right、padding-left、padding-right，其它属性不会起边距效果。<br>对应于display:block|对应于display:inline；</p>
-
-        <h3 id="图片样式"   >
-          <a href="#图片样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#图片样式" class="headerlink" title="图片样式"></a>图片样式</h3>
-      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1735108" >https://cloud.tencent.com/developer/article/1735108</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<ul>
-<li><p>一、图片大小</p>
-<ul>
-<li>width</li>
-<li>height</li>
-</ul>
-</li>
-<li><p>二、图片边框</p>
-<ul>
-<li>border</li>
-</ul>
-</li>
-<li><p>三、图片对齐</p>
-<ul>
-<li>在父类使用：text-align、vertical-align</li>
-</ul>
-</li>
-<li><p>四、文字环绕（float）</p>
-<ul>
-<li>float: left | right</li>
-</ul>
-</li>
-</ul>
-
-        <h3 id="背景图样式"   >
-          <a href="#背景图样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#背景图样式" class="headerlink" title="背景图样式"></a>背景图样式</h3>
-      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_48192192/article/details/119803230" >https://blog.csdn.net/qq_48192192/article/details/119803230</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<ul>
-<li><p>background-color</p>
-</li>
-<li><p>background-image: none | url(“”) | linear-gradient(color1, color2)</p>
-</li>
-<li><p>background-repeat: repeat | no-repeat | repeat-x | repeat-y</p>
-</li>
-<li><p>background-position:  </p>
-</li>
-<li><p>background-size </p>
-</li>
-<li><p>background-attachment 背景图像固定</p>
-</li>
-<li><p>background-clip ⽤于设定背景裁切的⽅式</p>
-</li>
-<li><p>background-origin ⽤于设定背景铺设的起点</p>
-</li>
-<li><p>background 背景属性复合写法<br><br>&nbsp;单独的属性需要写在复合属性的下方，否则复合属性会覆盖上方的单独属性。</p>
-<ul>
-<li>设置背景色半透明<br><br>background：rgba (r, g ,b , 透明度) 
-        <h3 id="盒子模型"   >
-          <a href="#盒子模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3>
-      </li>
-</ul>
-</li>
-<li><p>Margin(外边距) - 清除边框外的区域，外边距是透明的。</p>
-</li>
-<li><p>Border(边框) - 围绕在内边距和内容外的边框。</p>
-</li>
-<li><p>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</p>
-</li>
-<li><p>Content(内容) - width和height。 盒子的内容，显示文本和图像。</p>
-</li>
-</ul>
-
-        <h3 id="边框与背景"   >
-          <a href="#边框与背景" class="heading-link"><i class="fas fa-link"></i></a><a href="#边框与背景" class="headerlink" title="边框与背景"></a>边框与背景</h3>
-      <ul>
-<li>边框<ul>
-<li>border-style</li>
-<li>border-width</li>
-<li>border-color    </li>
-<li>border-radius</li>
-<li>box-shadow</li>
-<li>border-image</li>
-</ul>
-</li>
-</ul>
-
-        <h3 id="字体样式"   >
-          <a href="#字体样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3>
-      <ul>
-<li>font-family 字体类型</li>
-<li>font-size 字体大小</li>
-<li>color 字体颜色</li>
-<li>font-weight 字体粗细</li>
-<li>font-style 字体风格</li>
-<li>text-decoration 下划线</li>
-<li>font-variant 字体大小写</li>
-</ul>
-
-        <h3 id="CSS优先级"   >
-          <a href="#CSS优先级" class="heading-link"><i class="fas fa-link"></i></a><a href="#CSS优先级" class="headerlink" title="CSS优先级"></a>CSS优先级</h3>
-      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/zxjwlh/p/6213239.html" >https://www.cnblogs.com/zxjwlh/p/6213239.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<ul>
-<li>在属性后面使用 !important 会覆盖页面内任何位置定义的元素样式。</li>
-<li>作为style属性写在元素内的样式</li>
-<li>id选择器</li>
-<li>类选择器</li>
-<li>标签选择器</li>
-<li>通配符选择器</li>
-<li>浏览器自定义或继承</li>
-</ul>
-<p>（排序：!important &gt; 行内样式&gt;ID选择器 &gt; 类选择器 &gt; 标签 &gt; 通配符 &gt; 继承 &gt; 浏览器默认属性同一级别）</p>
-
-        <h3 id="定位"   >
-          <a href="#定位" class="heading-link"><i class="fas fa-link"></i></a><a href="#定位" class="headerlink" title="定位"></a>定位</h3>
-      <ul>
-<li>position<ul>
-<li>static</li>
-<li>relative</li>
-<li>fixed</li>
-<li>absolute</li>
-<li>sticky</li>
-</ul>
-</li>
-</ul>
-
-        <h3 id="浮动"   >
-          <a href="#浮动" class="heading-link"><i class="fas fa-link"></i></a><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3>
-      <ul>
-<li>float <ul>
-<li>right</li>
-<li>left </li>
-<li>none</li>
-<li>inherit</li>
-</ul>
-</li>
-</ul>
-
-        <h3 id="基础选择器"   >
-          <a href="#基础选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3>
-      <div class="table-container"><table>
-<thead>
-<tr>
-<th>基础选择器</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>标签选择器</td>
-<td>可以选出所有相同的标签，比如：p</td>
-</tr>
-<tr>
-<td>类选择器</td>
-<td>可以选出 1 个或者 多个 标签</td>
-</tr>
-<tr>
-<td>id 选择器</td>
-<td>一次只能选择 1 个标签</td>
-</tr>
-<tr>
-<td>通配符选择器</td>
-<td>选择所有的标签</td>
-</tr>
-</tbody></table></div>
-
-        <h3 id="分组选择器"   >
-          <a href="#分组选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#分组选择器" class="headerlink" title="分组选择器"></a>分组选择器</h3>
-      <pre><code><figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.class1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="selector-class">.class2</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:blue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*共同样式*/</span></span><br><span class="line"><span class="selector-class">.class1</span>, class2&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">13px</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>:underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-</code></pre>
-
-        <h3 id="组合选择器"   >
-          <a href="#组合选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h3>
-      <ul>
-<li>A,B 多个元素选择  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>, <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>:red; &#125;</span><br></pre></td></tr></table></div></figure></li>
-<li>A B 后代元素选择器，匹配所有属于A元素后代的B元素，A和B之间用空格分隔  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#fuji</span> <span class="selector-class">.ziji</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#ffffff</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> <span class="number">#000000</span> solid;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
-<li>A &gt; B 子元素选择器，匹配所有A元素的子元素B  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#zys</span>&gt;<span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#ffffff</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> <span class="number">#000000</span> solid;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
-<li>A + B 毗邻元素选择器，匹配所有紧随A元素之后的同级元素B  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#pl</span> <span class="selector-tag">p</span>+<span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#ffffff</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> <span class="number">#000000</span> solid;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
-</ul>
-
-        <h3 id="伪类"   >
-          <a href="#伪类" class="heading-link"><i class="fas fa-link"></i></a><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3>
-      <p>静态伪类和动态伪类，伪类选择器分为两种。</p>
-<ul>
-<li><p>（1）静态伪类：只能用于超链接的样式。如下：</p>
-<ul>
-<li>:link 超链接点击之前</li>
-<li>:visited 链接被访问过之后</li>
-</ul>
-<p>  PS：以上两种样式，只能用于超链接。</p>
-</li>
-<li><p>（2）动态伪类：针对所有标签都适用的样式。如下：</p>
-<ul>
-<li>:hover “悬停”：鼠标放到标签上的时候</li>
-<li>:active “激活”： 鼠标点击标签，但是不松手时。</li>
-<li>:focus 是某个标签获得焦点时的样式（比如某个输入框获得焦点）</li>
-</ul>
-</li>
-</ul>
-
-        <h3 id="溢出属性"   >
-          <a href="#溢出属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#溢出属性" class="headerlink" title="溢出属性"></a>溢出属性</h3>
-      <ul>
-<li>overflow <ul>
-<li>visible - 默认。溢出没有被剪裁。内容在元素框外渲染</li>
-<li>hidden - 溢出被剪裁，其余内容将不可见</li>
-<li>scroll - 溢出被剪裁，同时添加滚动条以查看其余内容</li>
-<li>auto - 与 scroll 类似，但仅在必要时添加滚动条</li>
-</ul>
-</li>
-</ul>
-
-        <h3 id="颜色值标注"   >
-          <a href="#颜色值标注" class="heading-link"><i class="fas fa-link"></i></a><a href="#颜色值标注" class="headerlink" title="颜色值标注"></a>颜色值标注</h3>
-      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/css_colors_legal.asp" >https://www.w3school.com.cn/cssref/css_colors_legal.asp</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<ul>
-<li>十六进制颜色</li>
-<li>带透明度的十六进制颜色</li>
-<li>RGB 颜色</li>
-<li>RGBA 颜色</li>
-<li>HSL 颜色</li>
-<li>HSLA 颜色</li>
-<li>预定义/跨浏览器的颜色名称</li>
-<li>currentcolor 关键字</li>
-</ul>
-
-        <h3 id="em-rem-px单位"   >
-          <a href="#em-rem-px单位" class="heading-link"><i class="fas fa-link"></i></a><a href="#em-rem-px单位" class="headerlink" title="em/rem/px单位"></a>em/rem/px单位</h3>
-      <ul>
-<li><p>em</p>
-<p>  父元素的字体大小。em是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。(1.3em—是其父嵌套字体大小的1.3倍。)</p>
-</li>
-<li><p>rem</p>
-<p>  根元素的字体大小。</p>
-</li>
-<li><p>px</p>
-<p>  px像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。</p>
-</li>
-</ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/12/Web/flex-layout/">CSS FlexBox</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-12</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-09-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="容器属性"   >
-          <a href="#容器属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3>
-      <ul>
-<li><p>justify-content</p>
-<p>  定义了项目在主轴上的对齐方式。</p>
-  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">justify-content</span>: flex-start | flex-end | center |space-between | space-around</span><br></pre></td></tr></table></div></figure></li>
-<li><p>align-items</p>
-<p>  定义项目在交叉轴上如何对齐。</p>
-  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">align-items</span>:flex-start | flex-end | center | baseline | stretch</span><br></pre></td></tr></table></div></figure></li>
-<li><p>align-content</p>
-<p>  定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
-  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">align-content</span>: flex-start | flex-end | center | space-between |space-around | stretch</span><br></pre></td></tr></table></div></figure></li>
-<li><p>flex-direction</p>
-<p>  决定主轴的方向（即项目的排列方向）。</p>
-  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br></pre></td></tr></table></div></figure></li>
-<li><p>flex-wrap</p>
-<p>  定义如果一条轴线排不下，如何换行。</p>
-  <figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br></pre></td></tr></table></div></figure></li>
-<li><p>flex-flow</p>
-<p>  flex-direction属性和flex-wrap属性的简写形式。</p>
-
-        <h3 id="项目属性"   >
-          <a href="#项目属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h3>
-      </li>
-<li><p>order</p>
-<p>  定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
-</li>
-<li><p>align-self</p>
-<p>  允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。</p>
-</li>
-<li><p>flex-grow</p>
-<p>  定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
-</li>
-<li><p>flex-shrink</p>
-<p>  定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
-</li>
-<li><p>flex-basis</p>
-<p>   指定了 flex 元素在主轴方向上的初始大小。定义了在分配多余空间之前，项目占据的主轴空间（main size）。</p>
-</li>
-<li><p>flex: </p>
-<p>  flex-grow, flex-shrink 和 flex-basis的简写</p>
-</li>
-</ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/03/28/Web/js-02/">JavaScript 基础(2)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-25</span></span></div></header><div class="post-body"><div class="post-excerpt"><h3 id="获取时间对象"   >
+</ul></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/06/05/spring/1%20%E6%A6%82%E8%BF%B0/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/03/28/Web/js-02/">JavaScript 基础(2)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-25</span></span></div></header><div class="post-body"><div class="post-excerpt"><h3 id="获取时间对象"   >
           <a href="#获取时间对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#获取时间对象" class="headerlink" title="获取时间对象"></a>获取时间对象</h3>
       <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前时间对象</span></span><br><span class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"><span class="comment">// 创建指定时间</span></span><br><span class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2030</span>, <span class="number">11</span>) <span class="comment">// 至少2个参数，除了年之外每个数字自动进位</span></span><br><span class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&#x27;2090/11/29 12/34/14&#x27;</span>) <span class="comment">// 还可以传入：yyyy-mm-dd HH-MM-SS</span></span><br></pre></td></tr></table></div></figure>
 <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"><span class="keyword">var</span> year = getFullYear() <span class="comment">// 年</span></span><br><span class="line">getMonth() <span class="comment">// 月</span></span><br><span class="line">getDate() <span class="comment">// 日</span></span><br><span class="line">getHours() <span class="comment">// 时</span></span><br><span class="line">getminutes() <span class="comment">// 分</span></span><br><span class="line">getSeconds() <span class="comment">// 秒</span></span><br><span class="line">getMilliseconds() <span class="comment">//毫秒</span></span><br><span class="line">getDay() <span class="comment">// 星期几，number类型，0 是周日</span></span><br><span class="line"><span class="comment">// 时间戳</span></span><br><span class="line">getTime()</span><br><span class="line"><span class="comment">//获取世界标准时间</span></span><br><span class="line">getUTCFullyear()</span><br><span class="line">...</span><br><span class="line">getUTCmilliseconds()</span><br></pre></td></tr></table></div></figure></div><div class="post-readmore"><a class="post-readmore__link" href="/2020/03/28/Web/js-02/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/03/21/Web/js-01/">JavaScript 基础(1)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-03-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-25</span></span></div></header><div class="post-body"><div class="post-excerpt"><h3 id="行内式"   >

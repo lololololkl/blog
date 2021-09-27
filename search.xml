@@ -1814,7 +1814,7 @@ XML 配置文件是树形结构，相对于 Properties 文件来说更加灵活�
   </entry>
   <entry>
     <title>CSS FlexBox</title>
-    <url>/2020/09/12/Web/flex-layout/</url>
+    <url>/2021/09/12/Web/flex-layout/</url>
     <content><![CDATA[
         <h3 id="容器属性"   >
           <a href="#容器属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3>
@@ -1827,7 +1827,9 @@ XML 配置文件是树形结构，相对于 Properties 文件来说更加灵活�
   <figure class="highlight css"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="attribute">align-items</span>:flex-start | flex-end | center | baseline | stretch</span><br></pre></td></tr></table></div></figure></li>
 <li><p>align-content</p>
 <p>  定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
-  <figure class="highlight css"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="attribute">align-content</span>: flex-start | flex-end | center | space-between |space-around | stretch</span><br></pre></td></tr></table></div></figure></li>
+  <figure class="highlight css"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="attribute">align-content</span>: flex-start | flex-end | center | space-between |space-around | stretch</span><br></pre></td></tr></table></div></figure>
+<span id="more"></span>
+</li>
 <li><p>flex-direction</p>
 <p>  决定主轴的方向（即项目的排列方向）。</p>
   <figure class="highlight css"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br></pre></td></tr></table></div></figure></li>
@@ -1871,7 +1873,7 @@ XML 配置文件是树形结构，相对于 Properties 文件来说更加灵活�
   </entry>
   <entry>
     <title>CSS基础知识</title>
-    <url>/2020/09/12/Web/c1_certify/</url>
+    <url>/2021/09/12/Web/c1_certify/</url>
     <content><![CDATA[<ul>
 <li><p>html: 文档元数据、内容区域标签、文本内容标签、内联文本语义标签、图片与多媒体标签、表格内容标签、表单标签</p>
 </li>
@@ -1884,7 +1886,32 @@ XML 配置文件是树形结构，相对于 Properties 文件来说更加灵活�
       
         <h3 id="块级-内联元素"   >
           <a href="#块级-内联元素" class="heading-link"><i class="fas fa-link"></i></a><a href="#块级-内联元素" class="headerlink" title="块级/内联元素"></a>块级/内联元素</h3>
-      <p><span class="exturl"><a class="exturl__link"   href="https://blog.csdn.net/xuanfuhuo4769/article/details/81326457" >https://blog.csdn.net/xuanfuhuo4769/article/details/81326457</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>块级元素|内联元素<br>—-|—-<br>独占一行,默认情况下，其宽度自动填满其父元素宽度|相邻的行内元素会排列在同一行里，直到一行排不下，才会换行，其宽度随元素的内容而变化<br>可以设置width，height属性|行内元素设置width，height属性无效<br>可以设置margin和padding属性|行内元素起边距作用的只有margin-left、margin-right、padding-left、padding-right，其它属性不会起边距效果。<br>对应于display:block|对应于display:inline；</p>
+      <p><span class="exturl"><a class="exturl__link"   href="https://blog.csdn.net/xuanfuhuo4769/article/details/81326457" >https://blog.csdn.net/xuanfuhuo4769/article/details/81326457</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>块级元素</th>
+<th>内联元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>独占一行,默认情况下，其宽度自动填满其父元素宽度</td>
+<td>相邻的行内元素会排列在同一行里，直到一行排不下，才会换行，其宽度随元素的内容而变化</td>
+</tr>
+<tr>
+<td>可以设置width，height属性</td>
+<td>行内元素设置width，height属性无效</td>
+</tr>
+<tr>
+<td>可以设置margin和padding属性</td>
+<td>行内元素起边距作用的只有margin-left、margin-right、padding-left、padding-right，其它属性不会起边距效果。</td>
+</tr>
+<tr>
+<td>对应于display:block</td>
+<td>对应于display:inline；</td>
+</tr>
+</tbody></table></div>
+<span id="more"></span>
 
         <h3 id="图片样式"   >
           <a href="#图片样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#图片样式" class="headerlink" title="图片样式"></a>图片样式</h3>
