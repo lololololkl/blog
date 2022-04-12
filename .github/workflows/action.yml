@@ -32,7 +32,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global init.defaultBranch "master"
           git config user.email "7348253+forinks@user.noreply.gitee.com"
-          git config user.name "git_usr"
+          git config --global user.name "git_usr"
           npm install hexo-cli -g
           npm install
 
