@@ -104,7 +104,7 @@ theme: stun
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repo: https://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@github.com/lololololkl/blog.git
+  repo: https://github.com/lololololkl/blog.git
   branch: gh-pages
   message: 
 
