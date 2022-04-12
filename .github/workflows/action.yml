@@ -17,9 +17,9 @@ jobs:
           ref: master
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3.1.1
         with:
-          node-version: '12'
+          node-version: '14.3.0'
 
       - name: Setup Hexo
         env:
