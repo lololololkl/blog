@@ -9,7 +9,7 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "5.4.0"
+    "version": "3.2.2"
   },
   "dependencies": {
     "hexo": "^5.0.0",
@@ -30,5 +30,18 @@
     "live2d-widget-model-hijiki": "^1.0.5",
     "live2d-widget-model-koharu": "^1.0.5",
     "live2d-widget-model-tororo": "^1.0.5"
-  }
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lololololkl/blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lololololkl/blog/issues"
+  },
+  "homepage": "https://github.com/lololololkl/blog#readme",
+  "description": ""
 }
