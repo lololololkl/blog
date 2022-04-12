@@ -32,6 +32,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "39233442+lololololkl@users.noreply.github.com"
           git config --global user.name "git_usr"
+          git config --global init.defaultBranch "master"
           npm install hexo-cli -g
           npm install
 
