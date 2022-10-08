@@ -2,7 +2,8 @@
 tags: [Android]
 categories: 
 - Android
-title: 5 Content Provider(1)
+title: '5 Content Provider(1)'
+date: 2021-02-17 13:10:36
 created: '2021-02-17T13:10:36.469Z'
 modified: '2021-04-19T13:31:51.758Z'
 ---

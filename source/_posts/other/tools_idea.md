@@ -4,6 +4,7 @@ categories:
 - other
 - idea
 title: "运行Maven项目时出错“Error : java 不支持发行版本5”"
+date: 2021-09-17 20:03:02
 ---
 
 ### 修改 idea 配置

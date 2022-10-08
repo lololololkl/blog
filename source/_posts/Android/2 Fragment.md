@@ -3,6 +3,7 @@ tags: [Android]
 categories: 
 - Android
 title: 2 Fragment
+date: 2021-01-26 18:11:52
 created: '2021-01-28T09:31:11.208Z'
 modified: '2021-04-19T13:31:51.651Z'
 ---
