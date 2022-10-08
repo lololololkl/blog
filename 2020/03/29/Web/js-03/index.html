@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.mastergo.cc","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":null,"post_body":null,"coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="BOM浏览器窗口尺寸 两个属性： innerWidth innnerHeight   共同点：包含滚动条的尺寸，除了Mac的Safari  浏览器弹出层 alert(‘提示文本’) confirm(‘提示文本’) prompt(‘提示文本’)   共同点：阻断程序后续执行（js 是单线程）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 基础(3)">
+<meta property="og:url" content="https://blog.mastergo.cc/2020/03/29/Web/js-03/index.html">
+<meta property="og:site_name" content="Jessy Blog">
+<meta property="og:description" content="BOM浏览器窗口尺寸 两个属性： innerWidth innnerHeight   共同点：包含滚动条的尺寸，除了Mac的Safari  浏览器弹出层 alert(‘提示文本’) confirm(‘提示文本’) prompt(‘提示文本’)   共同点：阻断程序后续执行（js 是单线程）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-29T06:35:02.000Z">
+<meta property="article:modified_time" content="2022-10-08T13:47:23.570Z">
+<meta property="article:author" content="江夏">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.mastergo.cc/2020/03/29/Web/js-03/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.mastergo.cc/2020/03/29/Web/js-03/","path":"2020/03/29/Web/js-03/","title":"JavaScript 基础(3)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaScript 基础(3) | Jessy Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Jessy Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不管怎样，明天又是全新的一天。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-link fa-fw"></i>friends</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#BOM"><span class="nav-number">1.</span> <span class="nav-text">BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E5%B0%BA%E5%AF%B8"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器窗口尺寸</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BC%B9%E5%87%BA%E5%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">浏览器弹出层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器的历史记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.4.</span> <span class="nav-text">浏览器版本信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B8%B8%E8%A7%81%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">浏览器常见事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%B7%E5%8E%BB%E7%9A%84%E9%AB%98%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.6.</span> <span class="nav-text">卷去的高度和宽度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%9D%90%E6%A0%87"><span class="nav-number">1.7.</span> <span class="nav-text">滚动到坐标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">2.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96DOM%E5%85%83%E7%B4%A0"><span class="nav-number">2.1.</span> <span class="nav-text">获取DOM元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7"><span class="nav-number">2.2.</span> <span class="nav-text">操作元素属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="nav-number">2.3.</span> <span class="nav-text">操作文本内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">操作元素样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-%E8%8A%82%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">DOM 节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%8A%82%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">获取节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%B1%9E%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">节点属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9"><span class="nav-number">3.3.</span> <span class="nav-text">创建节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9"><span class="nav-number">3.4.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="nav-number">3.5.</span> <span class="nav-text">删除节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E8%8A%82%E7%82%B9"><span class="nav-number">3.6.</span> <span class="nav-text">替换节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E8%8A%82%E7%82%B9"><span class="nav-number">3.7.</span> <span class="nav-text">克隆节点</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="江夏"
+      src="/uploads/icons/stun-32x31.jpg">
+  <p class="site-author-name" itemprop="name">江夏</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.mastergo.cc/2020/03/29/Web/js-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/icons/stun-32x31.jpg">
+      <meta itemprop="name" content="江夏">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jessy Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JavaScript 基础(3) | Jessy Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript 基础(3)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-03-29 14:35:02" itemprop="dateCreated datePublished" datetime="2020-03-29T14:35:02+08:00">2020-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-08 21:47:23" itemprop="dateModified" datetime="2022-10-08T21:47:23+08:00">2022-10-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h3><h4 id="浏览器窗口尺寸"><a href="#浏览器窗口尺寸" class="headerlink" title="浏览器窗口尺寸"></a>浏览器窗口尺寸</h4><ul>
+<li>两个属性：<ol>
+<li>innerWidth</li>
+<li>innnerHeight</li>
+</ol>
+</li>
+<li>共同点：包含滚动条的尺寸，除了Mac的Safari</li>
+</ul>
+<h4 id="浏览器弹出层"><a href="#浏览器弹出层" class="headerlink" title="浏览器弹出层"></a>浏览器弹出层</h4><ol>
+<li>alert(‘提示文本’)</li>
+<li>confirm(‘提示文本’)</li>
+<li>prompt(‘提示文本’)</li>
+</ol>
+<ul>
+<li>共同点：阻断程序后续执行（js 是单线程）<span id="more"></span></li>
+</ul>
+<h4 id="浏览器的历史记录"><a href="#浏览器的历史记录" class="headerlink" title="浏览器的历史记录"></a>浏览器的历史记录</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.history.back()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法<ol>
+<li>back()</li>
+<li>forward()</li>
+<li>go(整数) ：负数是后退，0 是刷新当前页面，正整数前进</li>
+</ol>
+</li>
+</ul>
+<h4 id="浏览器版本信息"><a href="#浏览器版本信息" class="headerlink" title="浏览器版本信息"></a>浏览器版本信息</h4><p>window 的 navigator 成员，是一个对象，存储着浏览器的版本信息</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.nevigator.userAgent</span><br></pre></td></tr></table></figure>
+<ol>
+<li>userAgent</li>
+<li>appName  </li>
+<li>platform</li>
+</ol>
+<h4 id="浏览器常见事件"><a href="#浏览器常见事件" class="headerlink" title="浏览器常见事件"></a>浏览器常见事件</h4><ol>
+<li>onload<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="title">functio</span>(<span class="params"></span>)</span>&#123;&#125; </span><br><span class="line">当所有资源加载完毕执行</span><br><span class="line">放在head标签里面</span><br></pre></td></tr></table></figure></li>
+<li>onscroll：滚动条滚动就触发</li>
+<li>onresize：可视窗口改变的时候触发，结合innerWidth和innerHeight</li>
+</ol>
+<h4 id="卷去的高度和宽度"><a href="#卷去的高度和宽度" class="headerlink" title="卷去的高度和宽度"></a>卷去的高度和宽度</h4><ul>
+<li>高度</li>
+</ul>
+<ol>
+<li>document.documentElement.scrollTop：必须有Document标签</li>
+<li>document.body.scrollTop：必须没有Document标签</li>
+<li>兼容写法</li>
+</ol>
+<ul>
+<li>宽度</li>
+</ul>
+<ol>
+<li>document.documentElement.scrollLeft</li>
+<li>document.body.scrollLeft</li>
+<li>兼容写法</li>
+</ol>
+<h4 id="滚动到坐标"><a href="#滚动到坐标" class="headerlink" title="滚动到坐标"></a>滚动到坐标</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">window</span>.scrollTo(横坐标，纵坐标) <span class="comment">// 两个参数</span></span><br><span class="line"><span class="number">2.</span> <span class="built_in">window</span>.scrollTo(&#123;</span><br><span class="line">    <span class="attr">top</span>:纵坐标</span><br><span class="line">    <span class="attr">left</span>:横坐标</span><br><span class="line">    <span class="attr">behavior</span>: <span class="string">&#x27;smooth&#x27;</span> <span class="comment">// 决定是平滑定位还是瞬时定位 &#x27;instant&#x27;</span></span><br><span class="line">&#125;) <span class="comment">// 参数个数随意</span></span><br></pre></td></tr></table></figure>
+<p><code>让浏览器自己滚动到顶部</code></p>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><h4 id="获取DOM元素"><a href="#获取DOM元素" class="headerlink" title="获取DOM元素"></a>获取DOM元素</h4><ul>
+<li>非常规标签</li>
+</ul>
+<ol>
+<li>document.documentElement</li>
+<li>document.head</li>
+<li>document.body</li>
+</ol>
+<ul>
+<li>常规标签  </li>
+</ul>
+<ol>
+<li>getElementById()<br>查找范围：documenst或一个元素，返回一个元素或null</li>
+<li>getElementsByTagName()<br>返回值：一个伪数组或空的伪数组 </li>
+<li>getElementsByClassName()<br>返回值：一个伪数组</li>
+<li>getElemensByName()</li>
+<li>querySelector(‘选择器’)<br>返回值：css里面找到的第一个内容或null</li>
+<li>querySelectorAll(‘选择器’)<br>返回值：一个伪数组或空的</li>
+</ol>
+<h4 id="操作元素属性"><a href="#操作元素属性" class="headerlink" title="操作元素属性"></a>操作元素属性</h4><ul>
+<li>元素属性：原生属性、自定义属性、H5自定义属性（data-xxx）</li>
+<li>原生属性：<br>读取值：元素.属性名<br>设置值：元素.属性名 = 值</li>
+<li>自定义属性：不能点操作</li>
+</ul>
+<ol>
+<li>getAttribute(‘属性名’)</li>
+<li>setAttribute(‘属性名’, ‘值’)</li>
+<li>removeAttribute(‘属性名’)</li>
+<li>不管设置什么数据类型，打印的类型都是string</li>
+</ol>
+<ul>
+<li>H5 自定义属性：<br>每个元素都有一个属性dataset，里面包含了所有H5 自定义属性；key 是除了 data- 外的内容叫名字，value 是值。操作：元素.dataset.key</li>
+<li>操作元素类名</li>
+</ul>
+<ol>
+<li>设置、修改类名：元素.className = “类名”</li>
+<li>追加类名：新类名前加空格</li>
+<li>删除：字符切割，再写一遍<ul>
+<li>H5 方式操作：</li>
+<li>有一个属性：classList</li>
+<li>方法：add(): div.classList.add(‘新类名’)</li>
+<li>其他方法：remove() toggle()</li>
+</ul>
+</li>
+</ol>
+<h4 id="操作文本内容"><a href="#操作文本内容" class="headerlink" title="操作文本内容"></a>操作文本内容</h4><ol>
+<li>innerHTML</li>
+<li>innerText</li>
+<li>value</li>
+</ol>
+<h4 id="操作元素样式"><a href="#操作元素样式" class="headerlink" title="操作元素样式"></a>操作元素样式</h4><ul>
+<li>获取行内样式：<br>元素.style，获取到一个对象，包含所有的可设置样式。</li>
+<li>获取非行内样式：</li>
+</ul>
+<ol>
+<li>window.getComputedStyle()方法，返回值：一个对象，可以访问里面的对象</li>
+<li>currentStyle 属性 IE低版本</li>
+</ol>
+<ul>
+<li>当使用点语法时候，带中划线的样式要转化成驼峰的方式或数组关联法</li>
+<li>JS不能操作HTML文件和方CSS文件</li>
+</ul>
+<h3 id="DOM-节点"><a href="#DOM-节点" class="headerlink" title="DOM 节点"></a>DOM 节点</h3><p>元素节点、属性节点、文本节点、注释节点</p>
+<h4 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h4><ol>
+<li>childNodes: 元素.childNodes，元素的所有子节点</li>
+<li>children: 元素的所有子元素节点</li>
+<li>firstChild: 元素的第一个节点</li>
+<li>firstElementChild: 元素的第一个子元素节点</li>
+<li>lastChild    </li>
+<li>lastElementChild</li>
+<li>previousSibling: 元素的上一个兄弟节点</li>
+<li>previousElementSibing: 元素的上一个兄弟元素节点</li>
+<li>nextSibling: 元素的下一个兄弟节点</li>
+<li>nextElementSibling: 元素的下一个兄弟元素节点</li>
+<li>parentNode: 元素的父节点</li>
+<li>parentElement: 元素的父元素节点</li>
+<li>attributes: 该元素的所有属性节点</li>
+</ol>
+<h4 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h4><p>描述该节点的信息</p>
+<ol>
+<li>nodeType：一种节点的编号</li>
+<li>nodeName：节点名称</li>
+<li>nodeValue：节点的值</li>
+</ol>
+<h4 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h4><ol>
+<li>createElement(‘便签名’): 返回一个元素节点</li>
+<li>createTextNode(‘文本内容’)：返回一个文本节点，不是字符串</li>
+<li>createComment(‘注释内容’)</li>
+<li>createAttribute(‘属性名’): 返回一个属性节点，可以把它加到元素上</li>
+</ol>
+<h4 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h4><ol>
+<li>appendChild(): 父节点.appendChild(子节点)，放在最后一个子节点的位置</li>
+<li>insertBefore()</li>
+</ol>
+<h4 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h4><ol>
+<li>removeChild(): 父节点.removeChild(子节点)</li>
+<li>remove(): 节点.remove()，把自己移出父节点</li>
+</ol>
+<h4 id="替换节点"><a href="#替换节点" class="headerlink" title="替换节点"></a>替换节点</h4><ol>
+<li>replaceChild(): 父节点.replaceChild(新节点，旧节点)</li>
+</ol>
+<h4 id="克隆节点"><a href="#克隆节点" class="headerlink" title="克隆节点"></a>克隆节点</h4><ol>
+<li>cloneNode(): 节点.cloneNode(布尔值)，默认是false 不克隆后代节点。返回一个克隆好的节点</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Web/" rel="tag"># Web</a>
+              <a href="/tags/JS/" rel="tag"># JS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/28/Web/js-02/" rel="prev" title="JavaScript 基础(2)">
+                  <i class="fa fa-chevron-left"></i> JavaScript 基础(2)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/01/18/Android/0%20Activity%E7%9A%84%E7%B1%BB%E6%96%87%E4%BB%B6/" rel="next" title="0 Activity的类文件">
+                  0 Activity的类文件 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江夏</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"lololololkl/blog_comments_repo","issue_term":"issue-number","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":-30,"vOffset":-30},"mobile":{"show":true,"scale":0.8},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
