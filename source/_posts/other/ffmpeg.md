@@ -1,9 +1,9 @@
 ---
-tags: [other, ffmpeg]
+tags: [FFmpeg]
 categories: 
 - other
-- ffmpeg
-title: ffmpeg
+- FFmpeg
+title: FFmpeg
 date: 2021-09-15 20:03:02
 ---
 

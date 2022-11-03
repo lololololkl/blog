@@ -1,8 +1,8 @@
 ---
-tags: [other, idea]
+tags: [IDEA]
 categories: 
 - other
-- idea
+- IDEA
 title: "运行Maven项目时出错“Error : java 不支持发行版本5”"
 date: 2021-09-17 20:03:02
 ---

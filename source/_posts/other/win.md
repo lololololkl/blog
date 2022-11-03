@@ -1,5 +1,5 @@
 ---
-tags: [other, win]
+tags: [Windows]
 categories: 
 - other
 - Windows

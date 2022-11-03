@@ -1,5 +1,5 @@
 ---
-tags: [other, Linux]
+tags: [Linux]
 categories: 
 - other
 - Linux

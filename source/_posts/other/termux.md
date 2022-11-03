@@ -1,9 +1,9 @@
 ---
-tags: [other, termux]
+tags: [Termux]
 categories: 
 - other
-- termux
-title: termux
+- Termux
+title: Termux
 date: 2021-09-19 20:03:02
 ---
 
