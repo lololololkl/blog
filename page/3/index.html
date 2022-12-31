@@ -565,94 +565,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.mastergo.cc/2021/02/09/Android/4%20Data(2)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/icons/stun-32x31.jpg">
-      <meta itemprop="name" content="Jesse">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jesse's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jesse's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/09/Android/4%20Data(2)/" class="post-title-link" itemprop="url">4 Data(2)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-09 15:11:52" itemprop="dateCreated datePublished" datetime="2021-02-09T15:11:52+08:00">2021-02-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-08 21:57:33" itemprop="dateModified" datetime="2022-10-08T21:57:33+08:00">2022-10-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="4-Data-2"><a href="#4-Data-2" class="headerlink" title="4 Data(2)"></a>4 Data(2)</h1><h3 id="SharedPreferences"><a href="#SharedPreferences" class="headerlink" title="SharedPreferences"></a>SharedPreferences</h3><ul>
-<li>保存数据(onCreate方法内)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Button saveData = findViewById(R.id.save_data);</span><br><span class="line">        saveData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                SharedPreferences.Editor editor = getSharedPreferences(<span class="string">&quot;data&quot;</span>, MODE_PRIVATE).edit();</span><br><span class="line">                editor.putString(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">                editor.putInt(<span class="string">&quot;age&quot;</span>, <span class="number">28</span>);</span><br><span class="line">                editor.putBoolean(<span class="string">&quot;married&quot;</span>, <span class="keyword">false</span>);</span><br><span class="line">                editor.apply();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></li>
-<li>读取数据(onCreate方法内)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Button restoreData = findViewById(R.id.restore_data);</span><br><span class="line">        restoreData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                SharedPreferences pref = getSharedPreferences(<span class="string">&quot;data&quot;</span>, MODE_PRIVATE);</span><br><span class="line">                String name = pref.getString(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;&quot;</span>); <span class="comment">// 通过键读取值</span></span><br><span class="line">                <span class="keyword">int</span> age = pref.getInt(<span class="string">&quot;age&quot;</span>, <span class="number">0</span>);</span><br><span class="line">                <span class="keyword">boolean</span> married = pref.getBoolean(<span class="string">&quot;married&quot;</span>, <span class="keyword">true</span>);</span><br><span class="line">                Log.i(<span class="string">&quot;---&quot;</span>, <span class="string">&quot;name &quot;</span>+name);</span><br><span class="line">                Log.i(<span class="string">&quot;---&quot;</span>, <span class="string">&quot;age &quot;</span>+age);</span><br><span class="line">                Log.i(<span class="string">&quot;---&quot;</span>, <span class="string">&quot;married &quot;</span>+married);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://blog.mastergo.cc/2021/02/09/Android/4%20Data(1)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -724,6 +636,94 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.mastergo.cc/2021/02/09/Android/4%20Data(2)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/icons/stun-32x31.jpg">
+      <meta itemprop="name" content="Jesse">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jesse's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Jesse's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/09/Android/4%20Data(2)/" class="post-title-link" itemprop="url">4 Data(2)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-09 15:11:52" itemprop="dateCreated datePublished" datetime="2021-02-09T15:11:52+08:00">2021-02-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-08 21:57:33" itemprop="dateModified" datetime="2022-10-08T21:57:33+08:00">2022-10-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="4-Data-2"><a href="#4-Data-2" class="headerlink" title="4 Data(2)"></a>4 Data(2)</h1><h3 id="SharedPreferences"><a href="#SharedPreferences" class="headerlink" title="SharedPreferences"></a>SharedPreferences</h3><ul>
+<li>保存数据(onCreate方法内)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Button saveData = findViewById(R.id.save_data);</span><br><span class="line">        saveData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                SharedPreferences.Editor editor = getSharedPreferences(<span class="string">&quot;data&quot;</span>, MODE_PRIVATE).edit();</span><br><span class="line">                editor.putString(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">                editor.putInt(<span class="string">&quot;age&quot;</span>, <span class="number">28</span>);</span><br><span class="line">                editor.putBoolean(<span class="string">&quot;married&quot;</span>, <span class="keyword">false</span>);</span><br><span class="line">                editor.apply();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></li>
+<li>读取数据(onCreate方法内)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Button restoreData = findViewById(R.id.restore_data);</span><br><span class="line">        restoreData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                SharedPreferences pref = getSharedPreferences(<span class="string">&quot;data&quot;</span>, MODE_PRIVATE);</span><br><span class="line">                String name = pref.getString(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;&quot;</span>); <span class="comment">// 通过键读取值</span></span><br><span class="line">                <span class="keyword">int</span> age = pref.getInt(<span class="string">&quot;age&quot;</span>, <span class="number">0</span>);</span><br><span class="line">                <span class="keyword">boolean</span> married = pref.getBoolean(<span class="string">&quot;married&quot;</span>, <span class="keyword">true</span>);</span><br><span class="line">                Log.i(<span class="string">&quot;---&quot;</span>, <span class="string">&quot;name &quot;</span>+name);</span><br><span class="line">                Log.i(<span class="string">&quot;---&quot;</span>, <span class="string">&quot;age &quot;</span>+age);</span><br><span class="line">                Log.i(<span class="string">&quot;---&quot;</span>, <span class="string">&quot;married &quot;</span>+married);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
 
